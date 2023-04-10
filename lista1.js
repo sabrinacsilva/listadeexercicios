@@ -72,3 +72,16 @@ function exe10(){
     let a = (l*l) // 1*1 pois é lado vezes o lado e os lados são os mesmos//
     alert ("A área do quadrado é: " + a)//a = area
 }
+
+function exe11() {
+    let dMaior = Number(document.getElementById("dMaior").value)
+    let dMenor = Number(document.getElementById("dMenor").value)
+    let a = (dMaior + dMenor) / 2 
+    alert("A área deste losango é" + a + "cm")
+    
+function exe12() {
+    let salarioM = Number(document.getElementById("salarioM").value)
+    let salario = Number(document.getElementById("salario").value)
+    let quantidadeS = (salario / salarioM)
+    alert(`A quantidade de salarios minimos ganhos é de ${quantidadeS.toFixed(1)}.`)
+}
