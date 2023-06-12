@@ -1,0 +1,79 @@
+[20:23, 12/06/2023] Gabriel Ribeiro: Sobre as estruturas de repetição while, do...while e for, analise as afirmações
+
+I. a estrutura do...while é melhor para disponibilizar um menu de opções ao usuário
+
+II. a estrutura while normalmente gera mais comandos de controle do loop em relação a estrutura for
+
+III. pesquise no google: percebe-se que o comando continue dentro de uma estrutura de repetição, vai para a próxima iteração do loop, enquanto que o comando break força a saída do loop
+
+Estão corretas as afirmações
+[20:23, 12/06/2023] Gabriel Ribeiro: I. A afirmação I é verdadeira. A estrutura do...while é adequada para disponibilizar um menu de opções ao usuário, pois garante que o bloco de código dentro do loop seja executado pelo menos uma vez, mesmo que a condição seja falsa desde o início.
+
+II. A afirmação II é falsa. A estrutura for normalmente requer menos comandos de controle do loop em comparação com a estrutura while. A estrutura for possui uma sintaxe mais concisa e define a inicialização, condição e expressão de incremento/decremento em uma única linha, o que reduz a quantidade de código necessário.
+
+III. A afirmação III é verdadeira. O comando continue é usado dentro de uma estrutura de repetição para pular a iteração atual do loop e passar para a próxima iteração. Por outro lado, o comando b…
+[20:23, 12/06/2023] Gabriel Ribeiro: function alterarLikes(usuario, alteracao) {
+    var index = usuarios.indexOf(usuario);
+    
+    if (index !== -1) {
+      if (alteracao === 'aumentar') {
+        qtdeLikes[index] += parseInt(prompt('Informe a quantidade de likes a ser adicionada:'));
+      } else if (alteracao === 'diminuir') {
+        var quantidade = parseInt(prompt('Informe a quantidade de likes a ser removida:'));
+        if (qtdeLikes[index] - quantidade >= 0) {
+          qtdeLikes[index] -= quantidade;
+        } else {
+          alert('A quantidade de likes não pode ficar negativa.');
+        }
+      }
+    } else {
+      alert('Usuário não encontrado. A alteração foi cancelada.');
+    }
+  }
+  
+  
+  for (var i = 0; i < 10; i++) {
+    var titulo = prompt('Informe o título do post ' + (i + 1) + ':');
+    var descricao = prompt('Informe a descrição do post ' + (i + 1) + ':');
+    var usuario = prompt('Informe o usuário (autor) do post ' + (i + 1) + ':');
+    var likes = parseInt(prompt('Informe a quantidade de likes do post ' + (i + 1) + ':'));
+    
+    
+    if (!usuarioExiste(usuario) && likes >= 0) {
+      titulos.push(titulo);
+      descricoes.push(descricao);
+      usuarios.push(usuario);
+      qtdeLikes.push(likes);
+    } else {
+      alert('Usuário já existe ou quantidade de likes inválida. A entrada foi ignorada.');
+      i--; 
+    }
+  }
+  
+ 
+  for (var j = 0; j < 5; j++) {
+    var usuarioAlterar = prompt('Informe o usuário para realizar a alteração nos likes:');
+    
+    if (usuarioExiste(usuarioAlterar)) {
+      var alteracaoLikes = prompt('Deseja aumentar ou diminuir a quantidade de likes?');
+      
+      if (alteracaoLikes === 'aumentar' || alteracaoLikes === 'diminuir') {
+        alterarLikes(usuarioAlterar, alteracaoLikes);
+      } else {
+        alert('Opção inválida. A alteração foi cancelada.');
+        j--; 
+      }
+    } else {
+      alert('Usuário não encontrado. A alteração foi cancelada.');
+      j--; 
+    }
+  }
+  
+  
+  var indiceMaiorLikes = 0;
+  for (var k = 1; k < qtdeLikes.length; k++) {
+    if (qtdeLikes[k] > qtdeLikes[indiceMaiorLikes]) {
+      indiceMaiorLikes = k;
+    }
+  }
+  
